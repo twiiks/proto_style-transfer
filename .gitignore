@@ -8,7 +8,7 @@ pngs
 preds
 
 *.sw*
-data
+data/
 __pycache__/
 *.py[cod]
 *$py.class
