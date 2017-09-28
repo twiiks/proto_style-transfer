@@ -161,6 +161,25 @@ def _get_files(img_dir):
     return [os.path.join(img_dir, x) for x in files]
 
 
+# style.py 이미지를 다른 이미지의 스타일로 변환시키는 네트워크를 훈련시킵니다.
+#
+# Flags
+#
+# --checkpoint-dir: [필수] 체크포인트를 저장할 디렉토리
+# --style: [필수] 스타일 이미지의 경로
+# --train-path: 학습 이미지들이 들어있는 폴더 (디폴트: data/train2014)
+# --test: 매 체크포인트마다 네트워크를 테스트할 이미지의 경로 (디폴트: no image)
+# --test-dir: [--test 존재 시 필수] 테스트 이미지들을 저장할 디렉토리
+# --epochs: 에폭 (디폴트: 2)
+# --batch_size: 배치사이즈 (디폴트: 4)
+# --checkpoint-iterations: 체크포인트 사이에 박복할 수 (디폴트: 2000)
+# --vgg-path: VGG19 네트워크의 경로 (디폴트). 다른 로스함수를 시도해 보고 싶으면 VGG16 을 설정할수도 있음 (디폴트: data/imagenet-vgg-verydeep-19.mat)
+# --content-weight: 로스함수 안 내용의 weight (디폴트: 7.5e0)
+# --style-weight: 로스함수 안의 스타일의 weight (디폴트: 1e2)
+# --tv-weight: 로스함수 안의 total variation term 의 weight (디폴트: 2e2)
+# --learning-rate: 옵티마이저 러닝레이트 (디폴트: 1e-3)
+# --slow: 디버깅 기능. Gatys 방식을 사용하여 픽셀에 직접 최적화. 테스트 이미지를 컨텐츠 값으로 사용하고, test_dir은 완전히 최적화 된 이미지를 저장합니다(?)
+
 def main():
     parser = build_parser()
     options = parser.parse_args()
