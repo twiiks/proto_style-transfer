@@ -1,1 +1,15 @@
-# proto_style-transfer by sungjunyoung
+proto_style-transfer
+===========================
+
+개요
+---------------------------
+
+- 한글 폰트 자동 생성 서비스 [fontto](http://fontto.creatorlink.net/)의 한글폰트 학습 모델링 연구를 위한 프로젝트입니다.
+- [style-transfer](https://arxiv.org/abs/1705.04058)를 참고하여 한글 폰트 자동완성 모델링을 연구합니다.
+
+
+구조
+---------------------------
+- `fontto` : `reference` 모델을 한글 폰트 생성에 맞게 수정하거나 필요한 모델링을 직접 구현하는 디렉토리입니다.
+- `reference` : style-transfer를 이용한 모델링의 핵심 코드, 또는 필요한 참고 코드를 작성하는 디렉토리입니다.
+- `simple` : `fontto`에서 구현하는 모델링의 간단한 코드를 작성하는 디렉토리입니다.
