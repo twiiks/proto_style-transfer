@@ -1,15 +1,24 @@
-proto_style-transfer
-===========================
+## proto_style-transfer
 
-개요
----------------------------
+### Motivation
+- How to generate character for unshown images
 
-- 한글 폰트 자동 생성 서비스 [fontto](http://fontto.creatorlink.net/)의 한글폰트 학습 모델링 연구를 위한 프로젝트입니다.
-- [style-transfer](https://arxiv.org/abs/1705.04058)를 참고하여 한글 폰트 자동완성 모델링을 연구합니다.
+### Approach #2
+- Choose the most similar free font with user's own style before learning
+- Change chosen font targeting to the user's style
 
 
-구조
----------------------------
-- `fontto` : `reference` 모델을 한글 폰트 생성에 맞게 수정하거나 필요한 모델링을 직접 구현하는 디렉토리입니다.
-- `reference` : style-transfer를 이용한 모델링의 핵심 코드, 또는 필요한 참고 코드를 작성하는 디렉토리입니다.
-- `simple` : `fontto`에서 구현하는 모델링의 간단한 코드를 작성하는 디렉토리입니다.
+## Structure
+- **reference/fast-style-transfer** : implemented code for style-transfer
+
+
+## Limits
+- Output images shows afterimages
+- Hard to guess unmapped characters in learning
+
+
+## Example & Screenshot
+<img src='https://s3.ap-northeast-2.amazonaws.com/fontto/repository-images/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2017-10-25+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+6.38.48.png' width='300px' height='200px' />
+
+## Reference
+> [style-transfer](https://github.com/lengstrom/fast-style-transfer)
